@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Button</title>
+  <style>
+    .first{
+      background-color: red;
+      color: white;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 25px;
+      transition: background-color 50ms ease-in;
+    }
+    .first:hover{
+      opacity: 90%;
+    }
+    .clicked{
+      background-color: lightgray;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <button class="first second" onclick="colorChange()">Click</button>
+
+  <script>
+    function colorChange(){
+      const buttonElement = document.querySelector('.second');
+      const body = document.querySelector('body');
+      let para = document.getElementById('paragraph');
+
+      if(buttonElement.innerText==='Click'){
+        buttonElement.innerHTML="Clicked";
+        buttonElement.classList.add('clicked');
+        body.style.backgroundColor='black';
+        body.style.color='White';
+        para.innerHTML="Paragraph Changed!";
+
+      } else{
+        buttonElement.innerHTML="Click";
+        buttonElement.classList.remove('clicked');
+        body.style.backgroundColor='';
+        body.style.color='';
+        paragraph.innerHTML = 'Paragraph';
+      }
+    }
+  </script>
+  <p id="paragraph">Paragraph</p>
+</body>
+</html>
