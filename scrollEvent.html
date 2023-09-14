@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll</title>
+  <style>
+    body{
+      background: color-mix(in srgb, rgb(67, 67, 238) 50%, transparent 50%);
+      height: 2500px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26px;
+    }
+    .firstslide{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      height: 500px;
+      background-color: bisque;
+    }
+    .secondslide{
+      background-color: aquamarine;
+      position: absolute;
+      top: 1040px;
+      height: 500px;
+      left: -5000px;
+      width: 100%;
+      padding: 10px;
+    }
+    .thirdslide{
+      background-color: rgb(248, 112, 203);
+      height: 500px;
+      position: absolute;
+      top: 1560px;
+      left: -1000px;
+      width: 100%;
+      padding: 10px;
+    }
+    .forthslide{
+      background-color: rgb(37, 209, 31);
+      height: 500px;
+      position: absolute;
+      top: 2080px;
+      left: -3000px;
+      width: 100%;
+      padding: 10px;
+    }
+    .fifthslide{
+      background-color: rgb(125, 86, 231);
+      height: 500px;
+      position: absolute;
+      top: 2080px;
+      left: -3000px;
+      width: 100%;
+      padding: 10px;
+    }
+    .showhere2{
+      transition: all 0.8s;
+      top: 520px;
+      left: 0;
+    }
+    .showhere3{
+      transition: all 0.8s;
+      top: 1040px;
+      left: 0;
+    }
+    .showhere4{
+      transition: all 0.8s;
+      top: 1560px;
+      left: 0;
+    }
+    .showhere5{
+      transition: left 0.8s;
+      top: 2080px;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="firstslide">
+    <a href="">Home</a>
+  </div>
+  <div class="secondslide">
+    <a href="">About</a>
+  </div>
+  <div class="thirdslide">
+    <a href="">Projects</a>
+  </div>
+  <div class="forthslide">
+    <a href="">Services</a>
+  </div>
+  <div class="fifthslide">
+    <a href="">Contact</a>
+  </div>
+  
+  <script>
+    const showthis2=document.querySelector('.secondslide')
+    const showthis3=document.querySelector('.thirdslide')
+    const showthis4=document.querySelector('.forthslide')
+    const showthis5=document.querySelector('.fifthslide')
+
+  window.addEventListener('scroll',()=> {
+    const scrollY = window.scrollY;
+
+    if (scrollY >100) {
+      showthis2.classList.add('showhere2')
+    }
+    if(scrollY >700) {
+      showthis3.classList.add('showhere3')
+    }
+    if(scrollY >1200) {
+      showthis4.classList.add('showhere4')
+    }
+    if(scrollY >1600) {
+      showthis5.classList.add('showhere5')
+    }
+  });
+
+  </script>
+</body>
+</html>
