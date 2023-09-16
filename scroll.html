@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Scroll</title>
+    <style>
+      body {
+        margin-bottom: 10000px;
+        padding-top: 60px;
+      }
+      input {
+        padding: 13px;
+        border: 1px solid gray;
+        border-radius: 7px;
+      }
+      .aa {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 25px;
+        margin-left: 0px;
+        margin-top: 18px;
+        text-align: center;
+      }
+      .text {
+        margin-top: -5px;
+        margin-bottom: 5px;
+      }
+      .main {
+        margin-left: 13px;
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .user,
+      .pass {
+        margin-left: -6px;
+        padding-left: 28px;
+        margin-bottom: 10px;
+        width: 90%;
+      }
+      .form,
+      .form2 {
+        margin-bottom: 5px;
+        display: block;
+      }
+      .fa-user,
+      .fa-lock {
+        position: absolute;
+        margin-top: 13px;
+        color: gray;
+        font-size: 17px;
+        opacity: 50%;
+      }
+      .submit {
+        color: white;
+        border: none;
+        background-color: green;
+        width: 100px;
+        font-weight: bold;
+        padding: 15px;
+      }
+      .fa-house,
+      .fa-circle-plus,
+      .fa-bars,
+      .fa-circle-user,
+      .fa-ellipsis-vertical {
+        text-decoration: none;
+        color: initial;
+        font-size: 35px;
+      }
+      .brand {
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 3px 0 3px;
+      }
+      .more {
+        text-align: center;
+        color: Black;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      header {
+        background-color: lightgray;
+        color: white;
+        top: 0px;
+        left: 3px;
+        right: 3px;
+        height: 55px;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+      }
+      .fa-solid,.fa-regular {
+        margin-top: 9px;
+      }
+      .fa-ellipsis-vertical {
+        margin-right: 8px;
+      }
+      .fa-bars {
+        margin-left: 8px;
+      }
+      .fa-circle-plus:active {
+        color: gray;
+        background-color: black;
+        border-radius: 50px;
+      }
+      .home {
+        position: fixed;
+        background-color: lightgray;
+        color: black;
+        left: 100px;
+        top: 60px;
+      }
+      .b {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body style="height: 10000px" id="scroll">
+    <script>
+      let scroll = 0;
+      window.addEventListener("scroll", function () {
+        let scroll2 = window.pageYOffset;
+        if (scroll - scroll2 > 0) {
+          document.getElementById("scroll").innerHTML =
+            '<header><div class="a"><i class="fa-solid fa-bars"></i></div><div class="b"><i class="fa-solid fa-house"> </i></div><div class="c"><i class="fa-solid fa-circle-plus"></i></div><div class="d"><i class="fa-regular fa-circle-user"></i></div><div class="e"><i class="fa-solid fa-ellipsis-vertical"></i></div></header>';
+        } else {
+          document.getElementById("scroll").innerHTML = "";
+        }
+        scroll = scroll2;
+      });
+      window.addEventListener("load", function () {
+        document.getElementById("scroll").innerHTML =
+          '<header><div class="a"><i class="fa-solid fa-bars"></i></div><div class="b"><i class="fa-solid fa-house"> </i></div><div class="c"><i class="fa-solid fa-circle-plus"></i></div><div class="d"><i class="fa-regular fa-circle-user"></i></div><div class="e"><i class="fa-solid fa-ellipsis-vertical"></i></div></header>';
+
+          window.scrollTo(
+          {
+            top: 0,
+            behavior: 'smooth'
+          }
+          );
+        });
+    </script>
+  </body>
+</html>
