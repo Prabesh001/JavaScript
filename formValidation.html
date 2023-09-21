@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+
+  <script>
+    function formValidation(){
+      const EmailEle = document.getElementById("email").value;
+      const UsernameEle = document.getElementById('username').value;
+      const PasswordEle = document.getElementById('password').value;
+      const MobileEle = document.getElementById('mobile').value;
+      const country = document.getElementById('country').value;
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      const isValid = emailRegex.test(EmailEle);
+
+      if(!isValid){
+        alert('Wrong Email Format')
+        return false
+      }
+      else if(UsernameEle===''){
+        alert('Please enter your Username')
+        return false
+      }else if(UsernameEle.length<5){
+        alert('Username must be atleast 5 letters')
+        return false
+      } else if(PasswordEle===''){
+        alert('Please enter your password')
+        return false
+      }else if(PasswordEle.length<8){
+        alert('Password must be atleast 8 letters')
+        return false
+      }else if(MobileEle===''){
+        alert('Please enter your Mobile No.')
+        return false
+      }else if(MobileEle.length!=10){
+        alert('Mobile No. must be 10 Numbers and in format 98********')
+        return false
+      }else if(country==-1){
+        alert('Select your country')
+        return false
+      }
+      
+      return true
+    }
+  </script>
+
+</head>
+
+<body>
+  <form action="#">
+    <label for="email">Email :</label><br/>
+    <input type="email" id="email" placeholder="example@gmail.com"><br/><br>
+
+    <label for="username">Username :</label><br/>
+    <input type="text" id="username"><br/><br>
+    
+    <label for="password">Password :</label><br>
+    <input type="password" id="password"><br><br/>
+    
+    <label for="mobile">Mobile No. :</label><br>
+    <input type="number" id="mobile" placeholder="98********"><br><br/>
+
+    <select name="Country" id="country">
+      <option value="-1" selected>Choose Your Country</option>
+      <option value="1">Nepal</option>
+      <option value="2">India</option>
+      <option value="3">China</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit" onclick="return formValidation()">
+  </form>
+</body>
+</html>
