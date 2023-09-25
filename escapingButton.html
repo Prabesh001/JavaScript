@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape</title>
+  <style>
+    button{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" placeholder="Input"><br><br>
+  <button>Submit</button>
+
+  <script>
+    const input = document.querySelector('input');
+    const button = document.querySelector('button');
+    
+    button.addEventListener('click',()=>{
+      window.location='settings.html'
+    })
+
+    button.addEventListener('mouseover',(e)=>{
+      if(input.value!==''){
+        
+      } else{
+        if(e.clientX<=175){
+          button.style.left=e.clientX + 15 +'px'
+        } else{
+          button.style.left=10 +'px';
+        }
+        
+      }
+      console.log(e.clientX)
+    }
+    )
+    
+  </script>
+</body>
+</html>
