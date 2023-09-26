@@ -5,35 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape</title>
   <style>
-    button{
+    *{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .box{
+      height: 145px;
+      width: fit-content;
+      border: 1px solid black;
+      padding: 10px;
+    }
+    .sub-btn{
       position: absolute;
+    }
+    h3{
+      margin: 0; 
     }
   </style>
 </head>
 <body>
-  <input type="text" placeholder="Input"><br><br>
-  <button>Submit</button>
+  <div class="box">
+    <h3>Login Form</h3><br>
+    <input type="text" placeholder="Username" class="username"><br><br>
+    <input type="text" placeholder="Password" class="password"><br><br>
+    <button class="sub-btn">Submit</button>
+  </div>
 
   <script>
-    const input = document.querySelector('input');
+    const username = document.querySelector('.username');
+    const password = document.querySelector('.password');
     const button = document.querySelector('button');
     
     button.addEventListener('click',()=>{
-      window.location='settings.html'
+      if(username.value.length>=6 && password.value.length>=8){
+        alert("Login Successful!");
+      } else {
+        username.value=''
+        password.value=''
+        alert("Check your Username and Password again!");
+      }
     })
 
     button.addEventListener('mouseover',(e)=>{
-      if(input.value!==''){
+      if(username.value.length>=6 && password.value.length>=8){
         
       } else{
-        if(e.clientX<=175){
-          button.style.left=e.clientX + 15 +'px'
-        } else{
-          button.style.left=10 +'px';
-        }
-        
+        let value = e.clientX % 124
+        button.style.left=value + 13 +'px'   
       }
-      console.log(e.clientX)
     }
     )
     
