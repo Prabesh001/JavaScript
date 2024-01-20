@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <title>Click Count</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,5');
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Poppins;
+    }
+    div{
+      margin: 100px;
+      cursor: default;
+      display: flex;
+    }
+    div span::selection{
+      background: white;
+      color: black;
+    } 
+
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <span>$</span>
+    <span class="count">0</span>
+  </div>
+
+  <script>
+    const count=document.querySelector('.count')
+
+    document.addEventListener('click',()=>{
+      count.innerText++
+    })
+  </script>
+</body>
+</html>
